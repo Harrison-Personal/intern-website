@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intro to Development</title>
+
+  <!-- Design tokens — edit first -->
+  <link rel="stylesheet" href="css/variables.css" />
+
+  <!-- Global reset, layout wrapper, shared section chrome, buttons, utilities, breakpoints -->
+  <link rel="stylesheet" href="css/base.css" />
+
+  <!-- Section styles -->
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/learn.css" />
+  <link rel="stylesheet" href="css/steps.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVIGATION (optional — remove if not needed)
+       ===================================================== -->
+  <header role="banner">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container">
+        <a href="#" class="site-nav__logo" aria-label="Home">
+          <!-- logo / wordmark goes here -->
+        </a>
+        <ul class="site-nav__links">
+          <li><a href="#learn">What You'll Learn</a></li>
+          <li><a href="#steps">Getting Started</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- =================================================
+         HERO
+         ================================================= -->
+    <section class="hero section" aria-labelledby="hero-heading">
+      <div class="container">
+
+        <div class="hero__content">
+          <p class="hero__eyebrow"><!-- e.g. "InTimeTec Internship" --></p>
+          <h1 class="hero__heading" id="hero-heading"><!-- main headline --></h1>
+          <p class="hero__subheading"><!-- one-liner hook --></p>
+
+          <div class="hero__cta-group">
+            <a href="#steps" class="btn btn--primary"><!-- primary CTA --></a>
+            <a href="#learn" class="btn btn--secondary"><!-- secondary CTA --></a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <!-- decorative illustration / code snippet / animation placeholder -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =================================================
+         WHAT YOU'LL LEARN — card grid
+         ================================================= -->
+    <section class="learn section" id="learn" aria-labelledby="learn-heading">
+      <div class="container">
+
+        <header class="section__header">
+          <p class="section__eyebrow"><!-- e.g. "Curriculum" --></p>
+          <h2 class="section__title" id="learn-heading"><!-- section heading --></h2>
+          <p class="section__subtitle"><!-- optional blurb --></p>
+        </header>
+
+        <div class="learn__grid">
+
+          <!-- Card 1 — repeat this block for each topic -->
+          <!--
+            CSS-ONLY TOGGLE PATTERN (optional):
+            <input type="checkbox" id="card-toggle-1" class="card-toggle sr-only" />
+            <label for="card-toggle-1" class="learn-card">
+          -->
+          <article class="learn-card">
+            <div class="learn-card__icon" aria-hidden="true">
+              <!-- icon / emoji / SVG -->
+            </div>
+            <h3 class="learn-card__title"><!-- topic title --></h3>
+            <p class="learn-card__body"><!-- one-sentence description --></p>
+            <!--
+              CSS-ONLY TOGGLE PATTERN (continued):
+            </label>
+            <div class="learn-card__detail"> ... expanded content ... </div>
+            -->
+          </article>
+
+          <!-- Card 2 -->
+          <article class="learn-card">
+            <div class="learn-card__icon" aria-hidden="true"></div>
+            <h3 class="learn-card__title"></h3>
+            <p class="learn-card__body"></p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="learn-card">
+            <div class="learn-card__icon" aria-hidden="true"></div>
+            <h3 class="learn-card__title"></h3>
+            <p class="learn-card__body"></p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="learn-card">
+            <div class="learn-card__icon" aria-hidden="true"></div>
+            <h3 class="learn-card__title"></h3>
+            <p class="learn-card__body"></p>
+          </article>
+
+          <!-- Add more cards as needed -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================
+         GETTING STARTED — step path
+         ================================================= -->
+    <section class="steps section" id="steps" aria-labelledby="steps-heading">
+      <div class="container">
+
+        <header class="section__header">
+          <p class="section__eyebrow"><!-- e.g. "Your Roadmap" --></p>
+          <h2 class="section__title" id="steps-heading"><!-- section heading --></h2>
+          <p class="section__subtitle"><!-- optional blurb --></p>
+        </header>
+
+        <ol class="steps__path" role="list">
+          <!--
+            CSS-ONLY :target PATTERN:
+            Give each step an id (e.g. id="step-1") so clicking an anchor
+            like <a href="#step-2"> highlights it via .step:target { ... }
+          -->
+
+          <!-- Step 1 -->
+          <li class="step" id="step-1">
+            <div class="step__number" aria-hidden="true"><!-- 01 --></div>
+            <div class="step__content">
+              <h3 class="step__title"><!-- step name --></h3>
+              <p class="step__body"><!-- what to do / why it matters --></p>
+            </div>
+          </li>
+
+          <!-- Step 2 -->
+          <li class="step" id="step-2">
+            <div class="step__number" aria-hidden="true"><!-- 02 --></div>
+            <div class="step__content">
+              <h3 class="step__title"></h3>
+              <p class="step__body"></p>
+            </div>
+          </li>
+
+          <!-- Step 3 -->
+          <li class="step" id="step-3">
+            <div class="step__number" aria-hidden="true"><!-- 03 --></div>
+            <div class="step__content">
+              <h3 class="step__title"></h3>
+              <p class="step__body"></p>
+            </div>
+          </li>
+
+          <!-- Step 4 -->
+          <li class="step" id="step-4">
+            <div class="step__number" aria-hidden="true"><!-- 04 --></div>
+            <div class="step__content">
+              <h3 class="step__title"></h3>
+              <p class="step__body"></p>
+            </div>
+          </li>
+
+          <!-- Add more steps as needed -->
+
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="site-footer__brand">
+        <!-- logo / name -->
+      </div>
+
+      <ul class="site-footer__links">
+        <li><a href="#"><!-- link --></a></li>
+        <li><a href="#"><!-- link --></a></li>
+      </ul>
+
+      <p class="site-footer__copy">
+        <!-- copyright / attribution -->
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>

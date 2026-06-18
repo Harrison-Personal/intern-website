@@ -1,0 +1,27 @@
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+.site-nav {
+  /* position: sticky; top: 0; z-index: 100; */
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap:          ; */
+  /* padding-block: ; */
+}
+
+.site-nav__logo {
+}
+
+.site-nav__links {
+  display: flex;
+  list-style: none;
+  /* gap: ; */
+}
+
+.site-nav__links a {
+  /* CSS-ONLY INTERACTIVITY: :hover style goes here */
+}

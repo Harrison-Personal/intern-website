@@ -1,0 +1,39 @@
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+.hero {
+  /* background: var(--color-hero-bg); */
+  /* min-height: ; */
+}
+
+.hero .container {
+  display: flex;
+  /* flex-direction:  ; */
+  /* align-items:     ; */
+  /* justify-content: ; */
+  /* gap:             ; */
+}
+
+.hero__content {
+  /* flex: ; */
+}
+
+.hero__eyebrow {
+}
+
+.hero__heading {
+}
+
+.hero__subheading {
+}
+
+.hero__cta-group {
+  display: flex;
+  /* gap:        ; */
+  /* flex-wrap: wrap; */
+}
+
+.hero__visual {
+  /* flex: ; */
+  /* decorative art / illustration placeholder */
+}

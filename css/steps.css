@@ -1,0 +1,59 @@
+/* =========================================================
+   GETTING STARTED — step path
+   ========================================================= */
+.steps {
+}
+
+.steps__path {
+  display: flex;
+  /* flex-direction: column;  — or row for a horizontal timeline */
+  /* gap: ; */
+  /* position: relative; needed if you draw the connector via ::before */
+}
+
+/* Connector line between steps (CSS-only, pseudo-element on the list) */
+.steps__path::before {
+  content: "";
+  /* position: absolute; */
+  /* top / left / width / height */
+  /* background: var(--color-border); */
+}
+
+/* Individual step */
+.step {
+  display: flex;
+  /* align-items: ; */
+  /* gap: ; */
+  /* position: relative; */
+}
+
+.step__number {
+  /* circle badge */
+  /* flex-shrink: 0; */
+}
+
+.step__content {
+}
+
+.step__title {
+}
+
+.step__body {
+}
+
+/* =========================================================
+   CSS-ONLY :target HIGHLIGHT — active step
+   ---------------------------------------------------------
+   Each <li> has an id (e.g. id="step-1").
+   An anchor like <a href="#step-2"> updates the URL hash,
+   which triggers :target on that element.
+   ========================================================= */
+.step:target {
+}
+
+.step:target .step__number {
+}
+
+/* CSS-ONLY INTERACTIVITY: :hover accent on step number */
+.step:hover .step__number {
+}

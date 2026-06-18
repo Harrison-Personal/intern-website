@@ -1,0 +1,58 @@
+/* =========================================================
+   WHAT YOU'LL LEARN — card grid
+   ========================================================= */
+.learn {
+}
+
+.learn__grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(??px, 1fr)); */
+  /* gap: ; */
+}
+
+/* Individual learn card */
+.learn-card {
+  /* background:    var(--color-surface); */
+  /* border-radius: var(--card-radius); */
+  /* box-shadow:    var(--card-shadow); */
+  /* padding: ; */
+  display: flex;
+  flex-direction: column;
+  /* gap: ; */
+}
+
+.learn-card__icon {
+  /* width / height / color */
+}
+
+.learn-card__title {
+}
+
+.learn-card__body {
+}
+
+/* CSS-ONLY INTERACTIVITY: card lift on hover */
+.learn-card:hover {
+}
+
+/* =========================================================
+   CSS-ONLY :checked TOGGLE — expand card detail
+   ---------------------------------------------------------
+   HTML pattern:
+     <input type="checkbox" id="card-toggle-1" class="card-toggle sr-only" />
+     <label for="card-toggle-1" class="learn-card"> ... </label>
+     <div class="learn-card__detail"> ... expanded content ... </div>
+
+   CSS wiring:
+     .card-toggle:checked + label + .learn-card__detail { display: block; }
+   ========================================================= */
+.card-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.learn-card__detail {
+  display: none;
+  /* CSS-ONLY INTERACTIVITY: revealed by :checked rule above */
+}

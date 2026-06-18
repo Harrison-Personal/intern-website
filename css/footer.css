@@ -1,0 +1,29 @@
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+}
+
+.site-footer .container {
+  display: flex;
+  /* flex-direction:  ; */
+  /* align-items:     ; */
+  /* justify-content: ; */
+  /* gap:             ; */
+}
+
+.site-footer__brand {
+}
+
+.site-footer__links {
+  display: flex;
+  list-style: none;
+  /* gap: ; */
+}
+
+.site-footer__links a {
+  /* CSS-ONLY INTERACTIVITY: :hover */
+}
+
+.site-footer__copy {
+}
