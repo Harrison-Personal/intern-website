@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+    SUNNY'S CORNER
+    This file is the page content (HTML). If you are new to coding:
+    - Change words between tags, like <h1>Change me</h1>.
+    - Do NOT change class="..." names unless you also update the CSS files.
+    - Styles live in the css/ folder. Interactivity lives in js/app.js.
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Intro to Development</title>
+  <title>Sunny's Corner</title>
 
-  <!-- Design tokens — edit first -->
+  <!-- Google Fonts used by the README design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- 1) Design tokens: colors, fonts, spacing. Start here when changing the look. -->
   <link rel="stylesheet" href="css/variables.css" />
 
-  <!-- Global reset, layout wrapper, shared section chrome, buttons, utilities, breakpoints -->
+  <!-- 2) Shared styles: reset, layout, buttons, section headings, helpers. -->
   <link rel="stylesheet" href="css/base.css" />
 
-  <!-- Section styles -->
+  <!-- 3) Page sections: one CSS file per visible section. -->
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/learn.css" />
@@ -19,194 +31,192 @@
   <link rel="stylesheet" href="css/footer.css" />
 </head>
 <body>
+  <!-- Skip link helps keyboard users jump past navigation. -->
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- =====================================================
-       NAVIGATION (optional — remove if not needed)
+       NAVIGATION
+       Edit the logo text and links below.
+       href="#joy" means clicking scrolls to the section with id="joy".
        ===================================================== -->
-  <header role="banner">
+  <header class="site-header" role="banner">
     <nav class="site-nav" aria-label="Main navigation">
-      <div class="container">
-        <a href="#" class="site-nav__logo" aria-label="Home">
-          <!-- logo / wordmark goes here -->
+      <div class="container site-nav__inner">
+        <a href="#" class="site-nav__logo" aria-label="Sunny's Corner home">
+          <span class="site-nav__sun" aria-hidden="true"></span>
+          <span>sunny's corner</span>
         </a>
+
         <ul class="site-nav__links">
-          <li><a href="#learn">What You'll Learn</a></li>
-          <li><a href="#steps">Getting Started</a></li>
+          <li><a href="#main">Home</a></li>
+          <li><a href="#wander">Explore</a></li>
+          <li><a href="#joy">Say hi</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <main id="main" tabindex="-1">
-
     <!-- =================================================
          HERO
+         The hero is the first big section visitors see.
+         Change the h1, subheading, and button labels to fit your idea.
          ================================================= -->
     <section class="hero section" aria-labelledby="hero-heading">
-      <div class="container">
+      <div class="container hero__layout">
+        <div class="hero__content reveal-on-scroll">
+          <p class="hero__eyebrow">welcome, friend</p>
+          <h1 class="hero__heading" id="hero-heading">Hi, come on in.</h1>
+          <p class="hero__subheading">
+            This is my <span id="hero-type" class="hero__typed-word">happy little place</span><span class="hero__cursor" aria-hidden="true"></span>
+          </p>
+          <p class="hero__body">
+            No agenda, nothing to sell. Just a warm little place made for fun.
+            Wander around, stay as long as you like.
+          </p>
 
-        <div class="hero__content">
-          <p class="hero__eyebrow"><!-- e.g. "InTimeTec Internship" --></p>
-          <h1 class="hero__heading" id="hero-heading"><!-- main headline --></h1>
-          <p class="hero__subheading"><!-- one-liner hook --></p>
-
-          <div class="hero__cta-group">
-            <a href="#steps" class="btn btn--primary"><!-- primary CTA --></a>
-            <a href="#learn" class="btn btn--secondary"><!-- secondary CTA --></a>
+          <div class="hero__cta-group" aria-label="Hero actions">
+            <a href="#joy" class="btn btn--primary">Cheer me up</a>
+            <a href="#wander" class="btn btn--secondary">Take a look around</a>
           </div>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <!-- decorative illustration / code snippet / animation placeholder -->
+        <!-- Decorative sun. aria-hidden keeps screen readers from announcing it. -->
+        <div class="hero__visual reveal-on-scroll" aria-hidden="true">
+          <div class="sun-orbit">
+            <div class="sun-core"></div>
+          </div>
         </div>
-
       </div>
     </section>
 
     <!-- =================================================
-         WHAT YOU'LL LEARN — card grid
+         PRESS FOR JOY
+         This section uses js/app.js to swap the message and fill the meter.
+         If JavaScript is off, the first message still appears.
          ================================================= -->
-    <section class="learn section" id="learn" aria-labelledby="learn-heading">
-      <div class="container">
+    <section class="joy section" id="joy" aria-labelledby="joy-heading">
+      <div class="container joy__inner reveal-on-scroll">
+        <p class="section__eyebrow">having a meh day?</p>
+        <h2 class="section__title" id="joy-heading">Give the button a press.</h2>
+        <p class="section__subtitle">It'll hand you something nice. As many times as you need.</p>
 
-        <header class="section__header">
-          <p class="section__eyebrow"><!-- e.g. "Curriculum" --></p>
-          <h2 class="section__title" id="learn-heading"><!-- section heading --></h2>
-          <p class="section__subtitle"><!-- optional blurb --></p>
+        <button class="joy__button" id="joy-button" type="button">
+          press<br />for joy
+        </button>
+
+        <p class="joy__message" id="joy-msg" aria-live="polite">You look lovely today, by the way.</p>
+        <p class="joy__count"><span id="joy-count">0</span> bits of joy handed out so far</p>
+
+        <div class="joy__meter-label">
+          <strong>Today's happiness meter</strong>
+          <span>keep pressing!</span>
+        </div>
+        <div class="joy__meter" aria-hidden="true">
+          <div class="joy__meter-fill" id="joy-meter"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================
+         WANDER AROUND — CARD GRID
+         To add a card: copy one <article class="learn-card"> block,
+         paste it inside .learn__grid, then change its title/body.
+         ================================================= -->
+    <section class="learn section" id="wander" aria-labelledby="wander-heading">
+      <div class="container">
+        <header class="section__header reveal-on-scroll">
+          <p class="section__eyebrow">wander around →</p>
+          <h2 class="section__title" id="wander-heading">Little places to explore</h2>
+          <p class="section__subtitle">Cards can become links later when you build more pages.</p>
         </header>
 
         <div class="learn__grid">
-
-          <!-- Card 1 — repeat this block for each topic -->
-          <!--
-            CSS-ONLY TOGGLE PATTERN (optional):
-            <input type="checkbox" id="card-toggle-1" class="card-toggle sr-only" />
-            <label for="card-toggle-1" class="learn-card">
-          -->
-          <article class="learn-card">
-            <div class="learn-card__icon" aria-hidden="true">
-              <!-- icon / emoji / SVG -->
-            </div>
-            <h3 class="learn-card__title"><!-- topic title --></h3>
-            <p class="learn-card__body"><!-- one-sentence description --></p>
-            <!--
-              CSS-ONLY TOGGLE PATTERN (continued):
-            </label>
-            <div class="learn-card__detail"> ... expanded content ... </div>
-            -->
+          <article class="learn-card reveal-on-scroll">
+            <div class="learn-card__icon" aria-hidden="true">♫</div>
+            <h3 class="learn-card__title">Today's playlist</h3>
+            <p class="learn-card__body">Songs on repeat this week.</p>
           </article>
 
-          <!-- Card 2 -->
-          <article class="learn-card">
-            <div class="learn-card__icon" aria-hidden="true"></div>
-            <h3 class="learn-card__title"></h3>
-            <p class="learn-card__body"></p>
+          <article class="learn-card reveal-on-scroll">
+            <div class="learn-card__icon" aria-hidden="true">☀</div>
+            <h3 class="learn-card__title">Photo dump</h3>
+            <p class="learn-card__body">Little moments worth keeping.</p>
           </article>
 
-          <!-- Card 3 -->
-          <article class="learn-card">
-            <div class="learn-card__icon" aria-hidden="true"></div>
-            <h3 class="learn-card__title"></h3>
-            <p class="learn-card__body"></p>
+          <article class="learn-card reveal-on-scroll">
+            <div class="learn-card__icon" aria-hidden="true">★</div>
+            <h3 class="learn-card__title">Currently loving</h3>
+            <p class="learn-card__body">Books, snacks, and tiny obsessions.</p>
           </article>
 
-          <!-- Card 4 -->
-          <article class="learn-card">
-            <div class="learn-card__icon" aria-hidden="true"></div>
-            <h3 class="learn-card__title"></h3>
-            <p class="learn-card__body"></p>
+          <article class="learn-card reveal-on-scroll">
+            <div class="learn-card__icon" aria-hidden="true">✎</div>
+            <h3 class="learn-card__title">Tiny blog</h3>
+            <p class="learn-card__body">Half-formed thoughts, weekly.</p>
           </article>
 
-          <!-- Add more cards as needed -->
+          <article class="learn-card reveal-on-scroll">
+            <div class="learn-card__icon" aria-hidden="true">♡</div>
+            <h3 class="learn-card__title">Guestbook</h3>
+            <p class="learn-card__body">Leave a hello. I read them all.</p>
+          </article>
 
+          <article class="learn-card learn-card--dark reveal-on-scroll">
+            <p class="learn-card__secret">psst…</p>
+            <h3 class="learn-card__title">A secret page</h3>
+            <p class="learn-card__body">If you can find it.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- =================================================
-         GETTING STARTED — step path
+         JAR OF GOOD THINGS
+         This uses the old "steps" CSS file because it is a list/path section.
+         Add more reminders by copying one <li class="step"> block.
          ================================================= -->
-    <section class="steps section" id="steps" aria-labelledby="steps-heading">
+    <section class="steps section" id="good-things" aria-labelledby="good-things-heading">
       <div class="container">
-
-        <header class="section__header">
-          <p class="section__eyebrow"><!-- e.g. "Your Roadmap" --></p>
-          <h2 class="section__title" id="steps-heading"><!-- section heading --></h2>
-          <p class="section__subtitle"><!-- optional blurb --></p>
+        <header class="section__header reveal-on-scroll">
+          <h2 class="section__title" id="good-things-heading">A jar of good things</h2>
+          <p class="section__subtitle">Tiny reminders worth holding onto.</p>
         </header>
 
-        <ol class="steps__path" role="list">
-          <!--
-            CSS-ONLY :target PATTERN:
-            Give each step an id (e.g. id="step-1") so clicking an anchor
-            like <a href="#step-2"> highlights it via .step:target { ... }
-          -->
-
-          <!-- Step 1 -->
-          <li class="step" id="step-1">
-            <div class="step__number" aria-hidden="true"><!-- 01 --></div>
-            <div class="step__content">
-              <h3 class="step__title"><!-- step name --></h3>
-              <p class="step__body"><!-- what to do / why it matters --></p>
-            </div>
+        <ul class="steps__path" role="list">
+          <li class="step reveal-on-scroll">
+            <span class="step__number" aria-hidden="true"></span>
+            <p class="step__body">The smell of rain on a warm day.</p>
           </li>
-
-          <!-- Step 2 -->
-          <li class="step" id="step-2">
-            <div class="step__number" aria-hidden="true"><!-- 02 --></div>
-            <div class="step__content">
-              <h3 class="step__title"></h3>
-              <p class="step__body"></p>
-            </div>
+          <li class="step reveal-on-scroll">
+            <span class="step__number" aria-hidden="true"></span>
+            <p class="step__body">Finding money in an old coat.</p>
           </li>
-
-          <!-- Step 3 -->
-          <li class="step" id="step-3">
-            <div class="step__number" aria-hidden="true"><!-- 03 --></div>
-            <div class="step__content">
-              <h3 class="step__title"></h3>
-              <p class="step__body"></p>
-            </div>
+          <li class="step reveal-on-scroll">
+            <span class="step__number" aria-hidden="true"></span>
+            <p class="step__body">A dog that wants to say hello.</p>
           </li>
-
-          <!-- Step 4 -->
-          <li class="step" id="step-4">
-            <div class="step__number" aria-hidden="true"><!-- 04 --></div>
-            <div class="step__content">
-              <h3 class="step__title"></h3>
-              <p class="step__body"></p>
-            </div>
+          <li class="step reveal-on-scroll">
+            <span class="step__number" aria-hidden="true"></span>
+            <p class="step__body">The first sip of coffee.</p>
           </li>
-
-          <!-- Add more steps as needed -->
-
-        </ol>
+        </ul>
       </div>
     </section>
-
   </main>
 
   <!-- =====================================================
        FOOTER
+       Keep this simple: name, links, and a small note.
        ===================================================== -->
   <footer class="site-footer" role="contentinfo">
-    <div class="container">
-
-      <div class="site-footer__brand">
-        <!-- logo / name -->
-      </div>
-
-      <ul class="site-footer__links">
-        <li><a href="#"><!-- link --></a></li>
-        <li><a href="#"><!-- link --></a></li>
-      </ul>
-
-      <p class="site-footer__copy">
-        <!-- copyright / attribution -->
-      </p>
-
+    <div class="container site-footer__inner">
+      <p class="site-footer__brand">sunny's corner</p>
+      <p class="site-footer__copy">made with love and a lot of sunshine · 2026</p>
     </div>
   </footer>
 
+  <!-- JavaScript loads last so the page content appears quickly. -->
+  <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,27 +1,73 @@
 /* =========================================================
    NAVIGATION
+   ---------------------------------------------------------
+   The nav stays at the top as users scroll. It contains:
+   1. a logo/brand on the left
+   2. page links on the right
    ========================================================= */
 .site-nav {
-  /* position: sticky; top: 0; z-index: 100; */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(255, 251, 235, 0.92);
+  backdrop-filter: blur(10px);
 }
 
-.site-nav .container {
+.site-nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* gap:          ; */
-  /* padding-block: ; */
+  gap: var(--space-6);
+  padding-block: 1.25rem;
 }
 
 .site-nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-hand);
+  font-size: 1.625rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav__sun {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 999px;
+  background: var(--color-accent);
 }
 
 .site-nav__links {
   display: flex;
+  align-items: center;
+  gap: var(--space-8);
   list-style: none;
-  /* gap: ; */
 }
 
 .site-nav__links a {
-  /* CSS-ONLY INTERACTIVITY: :hover style goes here */
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+.site-nav__links a:hover {
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .site-nav__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .site-nav__links {
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
 }
