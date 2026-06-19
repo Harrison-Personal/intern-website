@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
   <!--
-    SUNNY'S CORNER
-    This file is the page content (HTML). If you are new to coding:
-    - Change words between tags, like <h1>Change me</h1>.
-    - Do NOT change class="..." names unless you also update the CSS files.
-    - Styles live in the css/ folder. Interactivity lives in js/app.js.
+    START HERE
+    This file is only the structure/outline of the website.
+
+    Goal: Recreate the sunny personal website shown in README.md.
+    How to work:
+    1. Put your text/content inside the HTML sections below.
+    2. Add styles in the matching CSS file.
+    3. Only add JavaScript if you want the typing effect, scroll reveal, or joy button.
   -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunny's Corner</title>
+  <title><!-- TODO: Add the website title --></title>
 
-  <!-- Google Fonts used by the README design -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+  <!-- TODO: Add Google Fonts from the README design if you want Montserrat/Caveat. -->
 
-  <!-- 1) Design tokens: colors, fonts, spacing. Start here when changing the look. -->
+  <!--
+    CSS FILE ORDER
+    1. variables.css = colors, fonts, spacing
+    2. base.css = shared styles used everywhere
+    3. section files = styles for one part of the page
+  -->
   <link rel="stylesheet" href="css/variables.css" />
-
-  <!-- 2) Shared styles: reset, layout, buttons, section headings, helpers. -->
   <link rel="stylesheet" href="css/base.css" />
-
-  <!-- 3) Page sections: one CSS file per visible section. -->
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/learn.css" />
@@ -31,192 +32,155 @@
   <link rel="stylesheet" href="css/footer.css" />
 </head>
 <body>
-  <!-- Skip link helps keyboard users jump past navigation. -->
-  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- =====================================================
        NAVIGATION
-       Edit the logo text and links below.
-       href="#joy" means clicking scrolls to the section with id="joy".
+       Purpose: Top bar with logo/name and links.
+       Build ideas from README:
+       - warm cream background
+       - small yellow circle logo
+       - handwritten "sunny's corner" text
+       - links: Home, About me/Explore, Say hi
        ===================================================== -->
-  <header class="site-header" role="banner">
+  <header role="banner">
     <nav class="site-nav" aria-label="Main navigation">
-      <div class="container site-nav__inner">
-        <a href="#" class="site-nav__logo" aria-label="Sunny's Corner home">
-          <span class="site-nav__sun" aria-hidden="true"></span>
-          <span>sunny's corner</span>
+      <div class="container">
+        <a href="#" class="site-nav__logo" aria-label="Home">
+          <!-- TODO: Add logo circle/icon and site name here. -->
         </a>
 
         <ul class="site-nav__links">
-          <li><a href="#main">Home</a></li>
-          <li><a href="#wander">Explore</a></li>
-          <li><a href="#joy">Say hi</a></li>
+          <!-- TODO: Add navigation links. Example: <li><a href="#joy">Say hi</a></li> -->
         </ul>
       </div>
     </nav>
   </header>
 
   <main id="main" tabindex="-1">
+
     <!-- =================================================
-         HERO
-         The hero is the first big section visitors see.
-         Change the h1, subheading, and button labels to fit your idea.
+         HERO SECTION
+         Purpose: First section visitors see.
+         Build ideas from README:
+         - small eyebrow label: "welcome, friend"
+         - big headline: "Hi, come on in."
+         - typing text line: "This is my happy little place"
+         - two buttons
+         - decorative yellow sun/circle on the right
          ================================================= -->
     <section class="hero section" aria-labelledby="hero-heading">
-      <div class="container hero__layout">
-        <div class="hero__content reveal-on-scroll">
-          <p class="hero__eyebrow">welcome, friend</p>
-          <h1 class="hero__heading" id="hero-heading">Hi, come on in.</h1>
-          <p class="hero__subheading">
-            This is my <span id="hero-type" class="hero__typed-word">happy little place</span><span class="hero__cursor" aria-hidden="true"></span>
-          </p>
-          <p class="hero__body">
-            No agenda, nothing to sell. Just a warm little place made for fun.
-            Wander around, stay as long as you like.
-          </p>
+      <div class="container">
+        <div class="hero__content">
+          <p class="hero__eyebrow"><!-- TODO: Small label text --></p>
+          <h1 class="hero__heading" id="hero-heading"><!-- TODO: Main headline --></h1>
+          <p class="hero__subheading"><!-- TODO: Short supporting line / typing effect target --></p>
+          <p class="hero__body"><!-- TODO: Short paragraph welcoming visitors --></p>
 
-          <div class="hero__cta-group" aria-label="Hero actions">
-            <a href="#joy" class="btn btn--primary">Cheer me up</a>
-            <a href="#wander" class="btn btn--secondary">Take a look around</a>
+          <div class="hero__cta-group">
+            <a href="#joy" class="btn btn--primary"><!-- TODO: Primary button text --></a>
+            <a href="#wander" class="btn btn--secondary"><!-- TODO: Secondary button text --></a>
           </div>
         </div>
 
-        <!-- Decorative sun. aria-hidden keeps screen readers from announcing it. -->
-        <div class="hero__visual reveal-on-scroll" aria-hidden="true">
-          <div class="sun-orbit">
-            <div class="sun-core"></div>
-          </div>
+        <div class="hero__visual" aria-hidden="true">
+          <!-- TODO: Build decorative sun/circle using HTML/CSS, or place an image here. -->
         </div>
       </div>
     </section>
 
     <!-- =================================================
-         PRESS FOR JOY
-         This section uses js/app.js to swap the message and fill the meter.
-         If JavaScript is off, the first message still appears.
+         PRESS FOR JOY SECTION
+         Purpose: Fun interactive section with button, message, count, and meter.
+         Build ideas from README:
+         - heading: "Give the button a press."
+         - big circular yellow button
+         - message area that changes when clicked
+         - counter and happiness meter
          ================================================= -->
     <section class="joy section" id="joy" aria-labelledby="joy-heading">
-      <div class="container joy__inner reveal-on-scroll">
-        <p class="section__eyebrow">having a meh day?</p>
-        <h2 class="section__title" id="joy-heading">Give the button a press.</h2>
-        <p class="section__subtitle">It'll hand you something nice. As many times as you need.</p>
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow"><!-- TODO: Small handwritten intro --></p>
+          <h2 class="section__title" id="joy-heading"><!-- TODO: Section heading --></h2>
+          <p class="section__subtitle"><!-- TODO: Section description --></p>
+        </header>
 
-        <button class="joy__button" id="joy-button" type="button">
-          press<br />for joy
-        </button>
-
-        <p class="joy__message" id="joy-msg" aria-live="polite">You look lovely today, by the way.</p>
-        <p class="joy__count"><span id="joy-count">0</span> bits of joy handed out so far</p>
-
-        <div class="joy__meter-label">
-          <strong>Today's happiness meter</strong>
-          <span>keep pressing!</span>
-        </div>
-        <div class="joy__meter" aria-hidden="true">
-          <div class="joy__meter-fill" id="joy-meter"></div>
-        </div>
+        <!-- TODO: Add button, message, count, and meter markup here. -->
       </div>
     </section>
 
     <!-- =================================================
-         WANDER AROUND — CARD GRID
-         To add a card: copy one <article class="learn-card"> block,
-         paste it inside .learn__grid, then change its title/body.
+         WANDER AROUND / CARD GRID
+         Purpose: A grid of cards users can explore.
+         Build ideas from README:
+         - playlist card
+         - photo dump card
+         - currently loving card
+         - tiny blog card
+         - guestbook card
+         - secret page card
+
+         Tip: Create one card first. When it looks good, copy it.
          ================================================= -->
     <section class="learn section" id="wander" aria-labelledby="wander-heading">
       <div class="container">
-        <header class="section__header reveal-on-scroll">
-          <p class="section__eyebrow">wander around →</p>
-          <h2 class="section__title" id="wander-heading">Little places to explore</h2>
-          <p class="section__subtitle">Cards can become links later when you build more pages.</p>
+        <header class="section__header">
+          <p class="section__eyebrow"><!-- TODO: "wander around →" --></p>
+          <h2 class="section__title" id="wander-heading"><!-- TODO: Section heading --></h2>
+          <p class="section__subtitle"><!-- TODO: Optional description --></p>
         </header>
 
         <div class="learn__grid">
-          <article class="learn-card reveal-on-scroll">
-            <div class="learn-card__icon" aria-hidden="true">♫</div>
-            <h3 class="learn-card__title">Today's playlist</h3>
-            <p class="learn-card__body">Songs on repeat this week.</p>
-          </article>
-
-          <article class="learn-card reveal-on-scroll">
-            <div class="learn-card__icon" aria-hidden="true">☀</div>
-            <h3 class="learn-card__title">Photo dump</h3>
-            <p class="learn-card__body">Little moments worth keeping.</p>
-          </article>
-
-          <article class="learn-card reveal-on-scroll">
-            <div class="learn-card__icon" aria-hidden="true">★</div>
-            <h3 class="learn-card__title">Currently loving</h3>
-            <p class="learn-card__body">Books, snacks, and tiny obsessions.</p>
-          </article>
-
-          <article class="learn-card reveal-on-scroll">
-            <div class="learn-card__icon" aria-hidden="true">✎</div>
-            <h3 class="learn-card__title">Tiny blog</h3>
-            <p class="learn-card__body">Half-formed thoughts, weekly.</p>
-          </article>
-
-          <article class="learn-card reveal-on-scroll">
-            <div class="learn-card__icon" aria-hidden="true">♡</div>
-            <h3 class="learn-card__title">Guestbook</h3>
-            <p class="learn-card__body">Leave a hello. I read them all.</p>
-          </article>
-
-          <article class="learn-card learn-card--dark reveal-on-scroll">
-            <p class="learn-card__secret">psst…</p>
-            <h3 class="learn-card__title">A secret page</h3>
-            <p class="learn-card__body">If you can find it.</p>
-          </article>
+          <!--
+            TODO: Card template
+            <article class="learn-card">
+              <div class="learn-card__icon" aria-hidden="true"></div>
+              <h3 class="learn-card__title">Card title</h3>
+              <p class="learn-card__body">Card description.</p>
+            </article>
+          -->
         </div>
       </div>
     </section>
 
     <!-- =================================================
          JAR OF GOOD THINGS
-         This uses the old "steps" CSS file because it is a list/path section.
-         Add more reminders by copying one <li class="step"> block.
+         Purpose: A simple list of small happy reminders.
+         Build ideas from README:
+         - section title: "A jar of good things"
+         - two-column list on desktop
+         - one-column list on mobile
          ================================================= -->
     <section class="steps section" id="good-things" aria-labelledby="good-things-heading">
       <div class="container">
-        <header class="section__header reveal-on-scroll">
-          <h2 class="section__title" id="good-things-heading">A jar of good things</h2>
-          <p class="section__subtitle">Tiny reminders worth holding onto.</p>
+        <header class="section__header">
+          <h2 class="section__title" id="good-things-heading"><!-- TODO: Section heading --></h2>
+          <p class="section__subtitle"><!-- TODO: Short description --></p>
         </header>
 
         <ul class="steps__path" role="list">
-          <li class="step reveal-on-scroll">
-            <span class="step__number" aria-hidden="true"></span>
-            <p class="step__body">The smell of rain on a warm day.</p>
-          </li>
-          <li class="step reveal-on-scroll">
-            <span class="step__number" aria-hidden="true"></span>
-            <p class="step__body">Finding money in an old coat.</p>
-          </li>
-          <li class="step reveal-on-scroll">
-            <span class="step__number" aria-hidden="true"></span>
-            <p class="step__body">A dog that wants to say hello.</p>
-          </li>
-          <li class="step reveal-on-scroll">
-            <span class="step__number" aria-hidden="true"></span>
-            <p class="step__body">The first sip of coffee.</p>
-          </li>
+          <!-- TODO: Add good-things list items here. -->
         </ul>
       </div>
     </section>
+
   </main>
 
   <!-- =====================================================
        FOOTER
-       Keep this simple: name, links, and a small note.
+       Purpose: Small closing area at the bottom.
+       Build ideas from README:
+       - border on top
+       - centered handwritten text
+       - "made with love and a lot of sunshine · 2026"
        ===================================================== -->
   <footer class="site-footer" role="contentinfo">
-    <div class="container site-footer__inner">
-      <p class="site-footer__brand">sunny's corner</p>
-      <p class="site-footer__copy">made with love and a lot of sunshine · 2026</p>
+    <div class="container">
+      <!-- TODO: Add footer text/links here. -->
     </div>
   </footer>
 
-  <!-- JavaScript loads last so the page content appears quickly. -->
-  <script src="js/app.js"></script>
+  <!-- TODO: Uncomment this only if you build JavaScript interactions. -->
+  <!-- <script src="js/app.js"></script> -->
 </body>
 </html>

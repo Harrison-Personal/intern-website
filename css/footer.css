@@ -1,29 +1,28 @@
 /* =========================================================
    FOOTER
    ---------------------------------------------------------
-   Last section of the page. Keep it small and low-pressure.
+   Small closing area at bottom of page.
    ========================================================= */
 .site-footer {
-  border-top: 1px solid var(--color-border);
-  padding-block: var(--space-8);
-  text-align: center;
+  /* TODO: Add top border, padding, and centered text. */
 }
 
-.site-footer__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
+.site-footer .container {
+  /* TODO: Use flex or simple text alignment. */
 }
 
 .site-footer__brand {
-  font-family: var(--font-hand);
-  font-size: var(--text-xl);
-  font-weight: var(--font-weight-bold);
+  /* TODO: Optional brand/name styling. */
+}
+
+.site-footer__links {
+  /* TODO: Optional footer links row. */
+}
+
+.site-footer__links a {
+  /* TODO: Link hover/focus styles. */
 }
 
 .site-footer__copy {
-  color: var(--color-muted-light);
-  font-family: var(--font-hand);
-  font-size: var(--text-xl);
+  /* TODO: Handwritten muted footer note. */
 }
